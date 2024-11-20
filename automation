@@ -1,0 +1,54 @@
+import os
+import time
+import subprocess
+import socket
+# Set the file paths and machine names
+TApath="C:\\Users\\Pikmi\\OneDrive\\Desktop\\Semester Research\\Final iterations\\Modular Implementation server\\TA.py"
+
+print("Running TA...")
+os.system(f"start cmd /k python \"{TApath}\"")
+
+
+
+#STAGe 2 DT_AM
+#green_flag_socket=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#ADDR=socket.gethostbyname(socket.gethostname()), 5060
+#green_flag_socket.bind(ADDR)
+#green_flag_socket.listen()
+#greenflag,address=green_flag_socket.accept()
+#print('connected to', address)
+
+POCDT1_path = "C:\\Users\\Pikmi\\OneDrive\\Desktop\\Semester Research\\Final iterations\\Modular Implementation server\\POCDT1.py"
+POCDT2_path = "C:\\Users\\Pikmi\\OneDrive\\Desktop\\Semester Research\\Final iterations\\Modular Implementation server\\POCDT2.py"
+
+ES_path ="C:\\Users\\Pikmi\\OneDrive\\Desktop\\Semester Research\\Final iterations\\Modular Implementation server\\ES.py"
+
+
+# Set the number of iterations
+num_iterations = 1
+
+# Loop through the files in the desired order
+for i in range(num_iterations):
+    print(f"Iteration {1}...")
+    
+    # Run AMD
+    print("Running POCDT1...")
+    os.system(f"start cmd /k python \"{POCDT1_path}\"")
+    #greenflag.sendall('green'.encode())
+    # Run AMDT2 on the Mac machine
+    print("Running POCDT2...")
+    
+    os.system(f"start cmd /k python \"{POCDT2_path}\"")
+    
+        # Run AM1 on the Mac machine
+    print("Running ES...")
+
+    os.system(f"start cmd /k python \"{ES_path}\"")
+ 
+   
+    # Wait for 1 second before the next iteration
+    #time.sleep(5)
+    #print("Killing all cmd.exe processes...")
+    #os.system("taskkill /im cmd.exe /f")
+
+print("Completed!")
