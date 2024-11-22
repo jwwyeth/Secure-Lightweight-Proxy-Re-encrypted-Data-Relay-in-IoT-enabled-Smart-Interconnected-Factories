@@ -1,0 +1,38 @@
+import os
+import time
+# Set the file paths and machine names
+TApath="YOUR FILE PATH HERE"
+print("Running TA...")
+os.system(f"start cmd /k python \"{TApath}\"")
+time.sleep(2)
+
+
+
+POCDT1_path = "YOUR FILE PATH HERE"
+POCDT2_path = "YOUR FILE PATH HERE"
+
+ES_path ="YOUR FILE PATH HERE"
+
+
+# Set the number of iterations
+num_iterations = 1
+
+# Loop through the files in the desired order
+for i in range(num_iterations):
+    print(f"Iteration {1}...")
+    
+    # Run AMD
+    print("Running POCDT1...")
+    os.system(f"start cmd /k python \"{POCDT1_path}\"")
+
+ 
+    print("Running POCDT2...")
+    
+    os.system(f"start cmd /k python \"{POCDT2_path}\"")
+    print("Running ES...")
+
+    os.system(f"start cmd /k python \"{ES_path}\"")
+ 
+   
+
+print("Completed!")
